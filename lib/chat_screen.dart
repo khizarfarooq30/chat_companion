@@ -14,12 +14,12 @@ class ChatScreenState extends State<ChatScreen> {
 
   void _handleSubmit(String text) {
     textEditingController.clear();
-    ChatMessage chatMessage1 = new ChatMessage(message: text,name: widget.name,isMyUserName: false,);
-    ChatMessage chatMessage2 = new ChatMessage(message: text,name: "Khizar(Own)",isMyUserName: true,);
+    ChatMessage friendMessage = new ChatMessage(message: text,name: widget.name,isMyUserName: false,);
+    ChatMessage myMessage = new ChatMessage(message: text,name: "Khizar(Me)",isMyUserName: true,);
     setState(() {
       //used to rebuild our widget
-      _messages.insert(0, chatMessage1);
-      _messages.insert(0, chatMessage2);
+      _messages.insert(0, friendMessage);
+      _messages.insert(0, myMessage);
     });
   }
 
